@@ -6,7 +6,7 @@ module.exports.transferStaff = function(req, res) {
     const departmentCode = req.body.departmentCode;
     
     return staffModel.transferStaff(staffNumber, departmentCode)
-        .then(function(result) {
+        .then(function() {
             return res.sendStatus(200);
         })
         .catch(function(error){

@@ -24,7 +24,7 @@ module.exports.enrolNewStudent = function (req, res) {
     const courseCode = req.body.courseCode;
     
     return studentModel.enrolNewStudent(adminNumber, studentName, gender, address, dob, nationality, courseCode)
-        .then(function(result) {
+        .then(function() {
             return res.sendStatus(200);
         })
         .catch(function(error){

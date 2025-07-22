@@ -3,7 +3,7 @@ function fetchModule(code) {
     const token = localStorage.getItem('token');
 
     return fetch(`/modules/${code}`,{
-        headers: {  'Authorization': `Bearer ${token}`} 
+        headers: {  'Authorization': `Bearer ${token}`}
     }).then(function (response) {
         return response.json();
     });
@@ -17,10 +17,10 @@ window.addEventListener('DOMContentLoaded', function () {
         e.preventDefault(); // prevent using the default submit behavior
         const code = form.querySelector('input[name=code]').value;
         addToTable(code, '???', '???');
-    };
+    // };
 
     // Retrieving Module information
-    document.querySelector('#retrieve').onclick = function () {
+    // document.querySelector('#retrieve').onclick = function () {
         const rows = document.querySelectorAll('tbody tr');
 
         // Here we used row.length number of queries.
@@ -45,5 +45,4 @@ window.addEventListener('DOMContentLoaded', function () {
                 });
         }
     };
-
 });

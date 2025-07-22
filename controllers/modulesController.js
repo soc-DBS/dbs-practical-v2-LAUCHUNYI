@@ -56,26 +56,6 @@ module.exports.deleteByCode = function (req, res) {
         });
 }
 
-module.exports.deleteByCode = function (req, res) {
-    // Delete module by Code
-    const code = req.params.code;
-    return modulesModel
-        .deleteByCode(code)
-        .then(function () {
-            console.log("delete ok!");
-            return res.status(200).json({ msg: "deleted!" });
-        })
-        .catch(function (error) {
-            console.error(error);
-            if (error instanceof EMPTY_RESULT_ERROR) {
-                // return res.status(404).json({ error: error.message });
-                return res.status(404).json({ error: "No such module!" });
-            }
-            return res.status(500).json({ error: error.message });
-        });
-}
-
-
 module.exports.updateByCode = function (req, res) {
     // You can decide where you want to put the Credit in the Request
     // Implement Update module by Code and the credit is in req.body
